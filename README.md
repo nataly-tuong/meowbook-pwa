@@ -20,6 +20,6 @@ Hosted via **GitHub Pages** 👉 [View Live](https://lykaiio.github.io/meowbook-
 1. **Clone this repository:**
 
    ```bash
-   git clone https://github.com/your-username/meowbook-pwa.git
+   git clone https://github.com/lykaiio/meowbook-pwa.git
    cd meowbook-pwa
    ```
