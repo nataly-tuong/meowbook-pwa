@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+
+  /* Catpuccin Mocha Theme */
+  --color-dark-darkest: hsl(240deg, 23%, 9%);
+  --color-dark-main: hsl(240deg, 21%, 12%);
+  --color-dark-text: hsl(226deg, 64%, 88%);
+  --color-dark-primary: hsl(240deg, 21%, 15%);
+  --color-dark-secondary: hsl(237deg, 16%, 23%);
+  --color-dark-accent1: hsl(267deg, 84%, 81%);
+  --color-dark-container: hsl(233deg, 12%, 39%);
+
+  /* Catpuccin Latte Theme */
+  --color-light-darkest: hsl(232deg, 10%, 53%);
+  --color-light-primary: hsl(220deg, 21%, 89%);
+  --color-light-secondary: hsl(223deg, 16%, 83%);
+  --color-light-text: hsl(234deg, 16%, 35%);
+  --color-light-main: hsl(220deg, 21%, 89%);
+  --color-light-accent1: hsl(316deg, 73%, 69%);
+  --color-light-container: hsl(227deg, 12%, 71%);
+}
+
+@utility smooth-transition {
+  transition: all 0.5s ease-in-out;
+}
