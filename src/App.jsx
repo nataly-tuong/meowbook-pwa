@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
 
-  // Set the page title
   useEffect(() => {
     document.title = "Meowbook";
   }, []);
@@ -15,23 +14,23 @@ const App = () => {
   const cats = [
     {
       imageSrc: "zazu.jpg",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
     {
       imageSrc: "tole-tole.jpg",
-      text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     },
     {
       imageSrc: "kiji.jpg",
-      text: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+      text: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
     },
     {
       imageSrc: "dou-dou.jpg",
-      text: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
+      text: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.",
     },
     {
       imageSrc: "mr-fresh.jpg",
-      text: "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?",
+      text: "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.",
     },
   ];
 
@@ -42,8 +41,8 @@ const App = () => {
           isDarkMode ? "bg-dark-container" : "bg-light-primary"
         }`}
       >
-        <div className={`rounded-2xl text-white flex flex-row gap-4 h-full`}>
-          <div className="flex-shrink-0 w-32 h-32 sm:w-40 sm:h-40 overflow-hidden rounded-2xl">
+        <div className="rounded-2xl text-white flex flex-col md:flex-row gap-4 h-full">
+          <div className="w-full md:w-1/3 max-h-60 overflow-hidden rounded-2xl">
             <img
               src={imageSrc}
               alt="cat"
@@ -103,7 +102,6 @@ const App = () => {
           Welcome to Meowbook! {isDarkMode ? "meow meow" : "meow meow meow"}
         </p>
 
-        {/* Cat Grid */}
         <div
           className={`overflow-y-auto h-200 px-5 pr-5 p-4 shadow-xl shadow-black/35 smooth-transition rounded-3xl ${
             isDarkMode ? "bg-dark-primary" : "bg-light-container"
