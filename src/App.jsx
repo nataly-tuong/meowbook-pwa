@@ -3,6 +3,11 @@ import { useEffect, useState } from "react";
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
 
+  // PWA setup
+  const isStandalone =
+    window.matchMedia("(display-mode: standalone)").matches ||
+    window.navigator.standalone;
+
   // Set page title once on mount
   useEffect(() => {
     document.title = "Meowbook";
@@ -40,17 +45,17 @@ const App = () => {
   const CatCard = ({ imageSrc, text }) => {
     return (
       <div
-        className={`p-2 rounded-2xl smooth-transition rounded-2xl bg-dark-container w-full h-50 hover:scale-102 hover:shadow-sm hover:shadow-black/40 ${
+        className={`p-2 rounded-2xl smooth-transition w-full hover:scale-102 hover:shadow-sm hover:shadow-black/40 ${
           isDarkMode ? "bg-dark-container" : "bg-light-primary"
         }`}
       >
-        <div className="  rounded-2xl h-full text-white grid grid-cols-[1fr_2fr] gap-4">
-          <div className="overflow-hidden">
+        <div className="rounded-2xl h-full text-white grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4">
+          <div className="overflow-hidden w-full max-h-48 rounded-2xl">
             <img
               src={imageSrc}
               alt="cat"
-              className="w-full h-full rounded-2xl max-w-45 object-fill"
-            ></img>
+              className="w-full h-full object-cover rounded-2xl aspect-[3/2]"
+            />
           </div>
           <div
             className={`h-40 overflow-y-auto pr-2 py-4 smooth-transition ${
@@ -65,7 +70,6 @@ const App = () => {
   };
 
   return (
-    // Background with transition
     <div
       className={`flex flex-col min-h-screen font-sans smooth-transition ${
         isDarkMode
@@ -74,9 +78,13 @@ const App = () => {
       }`}
     >
       {/* Navbar */}
-      <nav className="flex-none flex w-full justify-between items-center p-4 px-8 max-w-6xl mx-auto">
+      <nav
+        className={`flex-none flex w-full justify-between items-center px-8 max-w-6xl mx-auto ${
+          isStandalone ? "pt-4" : "p-4"
+        }`}
+      >
         <h1
-          className={`font-sans text-2xl font-bold smooth-transition ${
+          className={`text-2xl font-bold smooth-transition ${
             isDarkMode ? "text-dark-text" : "text-light-text"
           }`}
         >
@@ -106,13 +114,13 @@ const App = () => {
           Welcome to Meowbook! {isDarkMode ? "meow meow" : "meow meow meow"}
         </p>
 
-        {/* Grid Stuff */}
+        {/* Card Grid */}
         <div
-          className={`overflow-y-auto h-200 px-5 pr-5 p-4 shadow-xl shadow-black/35 smooth-transition rounded-3xl p-4 ${
+          className={`overflow-y-auto h-200 px-5 pr-5 p-4 shadow-xl shadow-black/35 smooth-transition rounded-3xl ${
             isDarkMode ? "bg-dark-primary" : "bg-light-container"
           }`}
         >
-          <div className="grid grid-cols-1 gap-4 flex-1">
+          <div className="grid grid-cols-1 gap-4">
             {cats.map((cat, index) => (
               <CatCard key={index} imageSrc={cat.imageSrc} text={cat.text} />
             ))}
