@@ -16,23 +16,23 @@ const App = () => {
   const cats = [
     {
       imageSrc: "zazu.jpg",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     },
     {
       imageSrc: "tole-tole.jpg",
-      text: "Duis aute irure dolor in reprehenderit in voluptate...",
+      text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     },
     {
       imageSrc: "kiji.jpg",
-      text: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur...",
+      text: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
     },
     {
       imageSrc: "dou-dou.jpg",
-      text: "Neque porro quisquam est, qui dolorem ipsum quia dolor...",
+      text: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
     },
     {
       imageSrc: "mr-fresh.jpg",
-      text: "Ut enim ad minima veniam, quis nostrum exercitationem ullam...",
+      text: "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?",
     },
   ];
 
@@ -40,21 +40,18 @@ const App = () => {
   const CatCard = ({ imageSrc, text }) => {
     return (
       <div
-        className={`p-2 rounded-2xl smooth-transition w-full h-50 hover:scale-102 hover:shadow-sm hover:shadow-black/40 ${
+        className={`p-2 rounded-2xl smooth-transition rounded-2xl bg-dark-container w-full h-50 hover:scale-102 hover:shadow-sm hover:shadow-black/40 ${
           isDarkMode ? "bg-dark-container" : "bg-light-primary"
         }`}
       >
-        <div className="rounded-2xl h-full grid grid-cols-[1fr_2fr] gap-4">
-          {/* Image Section */}
+        <div className="  rounded-2xl h-full text-white grid grid-cols-[1fr_2fr] gap-4">
           <div className="overflow-hidden">
             <img
-              src={imageSrc} // Relative path works with Vite + GitHub Pages
+              src={imageSrc}
               alt="cat"
               className="w-full h-full rounded-2xl max-w-45 object-fill"
-            />
+            ></img>
           </div>
-
-          {/* Text Section with Scrollbar */}
           <div
             className={`h-40 overflow-y-auto pr-2 py-4 smooth-transition ${
               isDarkMode ? "text-dark-text" : "text-light-text"
@@ -68,7 +65,7 @@ const App = () => {
   };
 
   return (
-    // Page wrapper with background
+    // Background with transition
     <div
       className={`flex flex-col min-h-screen font-sans smooth-transition ${
         isDarkMode
@@ -79,7 +76,7 @@ const App = () => {
       {/* Navbar */}
       <nav className="flex-none flex w-full justify-between items-center p-4 px-8 max-w-6xl mx-auto">
         <h1
-          className={`text-2xl font-bold smooth-transition ${
+          className={`font-sans text-2xl font-bold smooth-transition ${
             isDarkMode ? "text-dark-text" : "text-light-text"
           }`}
         >
@@ -99,9 +96,8 @@ const App = () => {
         </button>
       </nav>
 
-      {/* Main content area */}
+      {/* Main Content */}
       <div className="pb-8 flex-1 w-full px-8 flex flex-col">
-        {/* Intro Text */}
         <p
           className={`pb-4 font-sans smooth-transition ${
             isDarkMode ? "text-dark-text" : "text-light-text"
@@ -110,14 +106,13 @@ const App = () => {
           Welcome to Meowbook! {isDarkMode ? "meow meow" : "meow meow meow"}
         </p>
 
-        {/* Card Grid Container */}
+        {/* Grid Stuff */}
         <div
-          className={`overflow-y-auto max-h-[75vh] px-5 pr-5 p-4 shadow-xl shadow-black/35 smooth-transition rounded-3xl ${
+          className={`overflow-y-auto h-200 px-5 pr-5 p-4 shadow-xl shadow-black/35 smooth-transition rounded-3xl p-4 ${
             isDarkMode ? "bg-dark-primary" : "bg-light-container"
           }`}
         >
-          <div className="grid grid-cols-1 gap-4">
-            {/* Render all cats */}
+          <div className="grid grid-cols-1 gap-4 flex-1">
             {cats.map((cat, index) => (
               <CatCard key={index} imageSrc={cat.imageSrc} text={cat.text} />
             ))}
