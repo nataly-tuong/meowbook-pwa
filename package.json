@@ -1,18 +1,23 @@
 {
-  "name": "kittyland-pwa",
+  "name": "meowbook-pwa",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://lykaiio.github.io/meowbook-pwa",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.7",
+    "gh-pages": "^6.3.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "save": "^2.9.0",
     "tailwindcss": "^4.1.7"
   },
   "devDependencies": {
