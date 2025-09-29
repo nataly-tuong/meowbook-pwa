@@ -1,21 +1,19 @@
-# 🐾 Meowbook PWA
+# Meowbook 
 
-Welcome to **Meowbook**, a playful PWA (Progressive Web App) photo grid for cats! featuring dark/light mode toggle, smooth transitions, and scrollable bios for each feline friend.
+Welcome to **Meowbook**, a photo grid for cats! featuring dark/light mode toggle, smooth transitions, and scrollable bios for each feline friend. Made to practice TailwindCSS.
 
-Hosted via **GitHub Pages** 👉 [View Live](https://lykaiio.github.io/meowbook-pwa/)
-
----
-
-## 🛠️ Tech Stack
-
-- ⚛️ React (with Vite)
-- 🌗 TailwindCSS
-- 🐱 Custom theme switcher
-- 📦 GitHub Pages deployment
+Hosted via **GitHub Pages** 👉 [View Live](https://nataly-tuong.github.io/meowbook-pwa/)
 
 ---
 
-## 🚀 Setup & Run Locally
+## Tech Stack
+
+- React (with Vite)
+- TailwindCSS
+
+---
+
+## Setup & Run Locally
 
 1. **Clone this repository:**
 
